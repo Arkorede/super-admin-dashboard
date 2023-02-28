@@ -27,9 +27,9 @@
   border-radius: 4px;
   color: #fff;
 
-  /* transition: all 0.3s; */
+  transition: all 0.3s;
 }
 
-/* .login-button:hover {
+.login-button:hover {
   background: linear-gradient(90deg, #600599 1.22%, #5c00fe 100%);
-} */
+}
