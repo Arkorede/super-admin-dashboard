@@ -1,0 +1,34 @@
+.top {
+  margin-top: 100px;
+}
+
+.form-input {
+  width: 350px;
+  height: 60px;
+  border: 1px solid #adb5bd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.login-form input::placeholder {
+  font-weight: 700;
+}
+
+.login *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.3rem rgba(213, 140, 223, 0.5);
+}
+
+.login-button {
+  width: 327px;
+  height: 58px;
+  padding: 21px 160px;
+  background: linear-gradient(90deg, #8003cd 1.22%, #5c00fe 100%);
+  border-radius: 4px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background: linear-gradient(90deg, #600599 1.22%, #5c00fe 100%);
+}
