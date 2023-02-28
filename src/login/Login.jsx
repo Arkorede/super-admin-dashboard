@@ -47,12 +47,16 @@ function Login() {
             />
           </div>
           <div className="flex justify-center items-center mt-10">
-            <div
+            <button
+              style={{
+                background:
+                  "linear-gradient(90deg, #8003cd 1.22%, #5c00fe 100%)",
+              }}
               className="login-button flex justify-center items-center"
               type="submit"
             >
               <p>Login</p>
-            </div>
+            </button>
           </div>
         </form>
       </div>
