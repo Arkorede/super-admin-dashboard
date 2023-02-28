@@ -47,12 +47,12 @@ function Login() {
             />
           </div>
           <div className="flex justify-center items-center mt-10">
-            <button
+            <div
               className="login-button flex justify-center items-center"
               type="submit"
             >
               <p>Login</p>
-            </button>
+            </div>
           </div>
         </form>
       </div>
