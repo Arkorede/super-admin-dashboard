@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import credbevyLogo from "./credbevyLogo.png";
 import eye from "./eye.png";
 import eyeSlash from "./eyeSlash.png";
+import { useNavigate } from "react-router-dom";
 // import Icon from "react-icons-kit";
 // import { basic_eye } from "react-icons-kit/linea/basic_eye";
 // import { basic_eye_closed } from "react-icons-kit/linea/basic_eye_closed";
-import { SecurityIconClose } from "../icons/Icon";
+// import { SecurityIconClose } from "../icons/Icon";
 import "./login.css";
 
 function Login() {
@@ -14,12 +15,14 @@ function Login() {
 
   const [type, setType] = useState("password");
 
+  const navigate = useNavigate();
+
   const handleValidate = (e) => {
     e.preventDefault();
     if (user === "reactjs12@gmail.com" && pass === "love") {
-      alert("Succesful login, welcome");
+      navigate("/dashboard");
     } else if (user === 123456 && pass === "love") {
-      alert("Succesful login, welcome");
+      navigate("/dashboard");
     } else {
       alert("Wrong Credentials, please try again");
     }
@@ -61,12 +64,12 @@ function Login() {
             {type === "password" ? (
               <span className="icon-span" onClick={() => setType("text")}>
                 {/* <Icon icon={basic_eye_closed} size={22} /> */}
-                <img src={eye} alt="security" />
+                <img src={eyeSlash} alt="security" />
               </span>
             ) : (
               <span className="icon-span" onClick={() => setType("password")}>
                 {/* <Icon icon={basic_eye} size={22} /> */}
-                <img src={eyeSlash} alt="security" />
+                <img src={eye} alt="security" />
               </span>
             )}
             <label htmlFor="" className="form-label">
