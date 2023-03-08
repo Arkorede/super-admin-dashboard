@@ -41,7 +41,11 @@ function Dashboard() {
               <img src={ellipseWalletTop} alt="ellipse" />
             </div>
             <div className="absolute w-[147px] h-[53px] top-[53px] left-[890px]">
-              <img src={ellipseWalletRight} alt="ellipse" />
+              <img
+                src={ellipseWalletRight}
+                alt="ellipse"
+                className="rounded-br-lg"
+              />
             </div>
           </div>
 

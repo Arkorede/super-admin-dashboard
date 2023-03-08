@@ -13,7 +13,9 @@ import setting from "./img/setting.png";
 
 function Sidebar() {
   let activeStyle = {
-    color: "#8003CD",
+    filter:
+      "brightness(0) saturate(100%) invert(19%) sepia(70%) saturate(4770%) hue-rotate(273deg) brightness(76%) contrast(124%)",
+    fontWeight: 600,
   };
 
   return (
@@ -27,14 +29,25 @@ function Sidebar() {
       <br />
       <br />
       <div className="flex flex-col gap-12">
-        <NavLink
-          to="dashboard"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          className="flex gap-[1.1rem]"
-        >
-          <img src={category} alt="category icon" />
-          <p className="text-[#8003CD] font-semibold">Dashboard</p>
-        </NavLink>
+        <div className="flex gap-[1.1rem]">
+          <NavLink
+            to="dashboard"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <img
+              src={category}
+              alt="category icon"
+              className="w-6 h- brightness-[2.5]"
+            />
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="text-[#8A8B9F] font-semibold"
+            to="dashboard"
+          >
+            Dashboard
+          </NavLink>
+        </div>
         <NavLink
           to="wallet"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
