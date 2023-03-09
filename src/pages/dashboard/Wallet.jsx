@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+
+import FundModal from "./FundModal";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
 
 export default function Wallet() {
+  const [modalOn, setModalOn] = useState(false);
+  const [choice, setChoice] = useState(false);
+
+  const clicked = () => {
+    setModalOn(true);
+  };
   return (
     <div className="p">
       <div className="w-full">
@@ -16,10 +24,16 @@ export default function Wallet() {
             <p className="mt-[6px] pl-[40px] text-white text-[34px] font-weight">
               ₦ 430,434,684.54
             </p>
-            <button className="bg-white flex gap-2 py-2 px-2.5 items-center justify-center rounded ml-[40px] inline-block mt-[32px]">
+            <button
+              className="bg-white flex gap-2 py-2 px-2.5 items-center justify-center rounded ml-[40px] inline-block mt-[32px]"
+              onClick={clicked}
+            >
               <img src={add} alt="add icon" className="w-4 h-4" />
               <p className="font-bold text-[0.625rem]">FundWallet</p>
             </button>
+            {modalOn && (
+              <FundModal setModalOn={setModalOn} setChoice={setChoice} />
+            )}
             <div
               className=""
               style={{
