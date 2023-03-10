@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
+import TabView from "./TabView/TabView";
+// import Table from "./Table";
 import FundModal from "./FundModal";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
+import DataTable from "react-data-table-component";
 
 export default function Wallet() {
   const [modalOn, setModalOn] = useState(false);
@@ -12,6 +15,66 @@ export default function Wallet() {
   const clicked = () => {
     setModalOn(true);
   };
+
+  const columns = [
+    {
+      name: "Receiver",
+      selector: (row) => row.receiver,
+    },
+    {
+      name: "Case",
+      selector: (row) => row.case,
+    },
+    {
+      name: "Amount",
+      selector: (row) => row.amount,
+    },
+    {
+      name: "Date",
+      selector: (row) => row.date,
+    },
+  ];
+
+  const data = [
+    {
+      id: 1,
+      receiver: "Oripeloye Timilehin",
+      case: 750,
+      amount: "₦ 134,000.00",
+      date: "9/27/22",
+    },
+    {
+      id: 1,
+      receiver: "Oripeloye Timilehin",
+      case: 750,
+      amount: "₦ 134,000.00",
+      date: "9/27/22",
+    },
+    {
+      id: 1,
+      receiver: "Oripeloye Timilehin",
+      case: 750,
+      amount: "₦ 134,000.00",
+      date: "9/27/22",
+    },
+    {
+      id: 1,
+      receiver: "Oripeloye Timilehin",
+      case: 750,
+      amount: "₦ 134,000.00",
+      date: "9/27/22",
+    },
+    {
+      id: 1,
+      receiver: "Oripeloye Timilehin",
+      case: 750,
+      amount: "₦ 134,000.00",
+      date: "9/27/22",
+    },
+  ];
+
+  const LoanTable = <DataTable columns={columns} data={data} />;
+
   return (
     <div className="p">
       <div className="w-full">
@@ -56,23 +119,15 @@ export default function Wallet() {
           </div>
 
           {/* WALLET ACTIVITIES */}
-          <div className="mt-10">
-            <div className="text-lg font-bold">Recent Wallet Activities</div>
-            <div className="mt-5 h-[474px] border border-solid border-[#E5EAEF] rounded">
-              <div className="flex p-6 border-b border-solid border-[#E5EAEF]">
-                <div className="flex gap-[3.875rem]">
-                  <p className="font-medium text-sm text-[#8A8B9F] leading-[19px]">
-                    All Activities
-                  </p>
-                  <p className="font-medium text-sm text-[#8A8B9F] leading-[19px]">
-                    Wallet Top Up
-                  </p>
-                  <p className="font-medium text-sm text-[#8A8B9F] leading-[19px]">
-                    Loan Disbursed
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="center">
+            <TabView
+              title={"Recent Wallet Activities"}
+              tabs={[
+                { name: "All Activities", content: "All Activities" },
+                { name: "Wallet Top Up", content: " Wallet Top Up" },
+                { name: "Loan Disbursed", content: LoanTable },
+              ]}
+            />
           </div>
         </div>
       </div>
