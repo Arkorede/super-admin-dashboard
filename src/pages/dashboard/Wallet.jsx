@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
 import TabView from "./TabView/TabView";
-// import Table from "./Table";
+// import "./Table.css";
+import List from "./Table";
 import FundModal from "./FundModal";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
-import DataTable from "react-data-table-component";
+// import DataTable from "react-data-table-component";
+import Datatable from "./Datatable";
 
 export default function Wallet() {
   const [modalOn, setModalOn] = useState(false);
@@ -16,64 +18,74 @@ export default function Wallet() {
     setModalOn(true);
   };
 
-  const columns = [
-    {
-      name: "Receiver",
-      selector: (row) => row.receiver,
-    },
-    {
-      name: "Case",
-      selector: (row) => row.case,
-    },
-    {
-      name: "Amount",
-      selector: (row) => row.amount,
-    },
-    {
-      name: "Date",
-      selector: (row) => row.date,
-    },
-  ];
+  // const columns = [
+  //   {
+  //     name: "Receiver",
+  //     selector: (row) => row.receiver,
+  //   },
+  //   {
+  //     name: "Case",
+  //     selector: (row) => row.case,
+  //   },
+  //   {
+  //     name: "Amount",
+  //     selector: (row) => row.amount,
+  //   },
+  //   {
+  //     name: "Date",
+  //     selector: (row) => row.date,
+  //   },
+  // ];
 
-  const data = [
-    {
-      id: 1,
-      receiver: "Oripeloye Timilehin",
-      case: 750,
-      amount: "₦ 134,000.00",
-      date: "9/27/22",
-    },
-    {
-      id: 1,
-      receiver: "Oripeloye Timilehin",
-      case: 750,
-      amount: "₦ 134,000.00",
-      date: "9/27/22",
-    },
-    {
-      id: 1,
-      receiver: "Oripeloye Timilehin",
-      case: 750,
-      amount: "₦ 134,000.00",
-      date: "9/27/22",
-    },
-    {
-      id: 1,
-      receiver: "Oripeloye Timilehin",
-      case: 750,
-      amount: "₦ 134,000.00",
-      date: "9/27/22",
-    },
-    {
-      id: 1,
-      receiver: "Oripeloye Timilehin",
-      case: 750,
-      amount: "₦ 134,000.00",
-      date: "9/27/22",
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     receiver: "Oripeloye Timilehin",
+  //     case: 750,
+  //     amount: "₦ 134,000.00",
+  //     date: "9/27/22",
+  //   },
+  //   {
+  //     id: 1,
+  //     receiver: "Oripeloye Timilehin",
+  //     case: 750,
+  //     amount: "₦ 134,000.00",
+  //     date: "9/27/22",
+  //   },
+  //   {
+  //     id: 1,
+  //     receiver: "Oripeloye Timilehin",
+  //     case: 750,
+  //     amount: "₦ 134,000.00",
+  //     date: "9/27/22",
+  //   },
+  //   {
+  //     id: 1,
+  //     receiver: "Oripeloye Timilehin",
+  //     case: 750,
+  //     amount: "₦ 134,000.00",
+  //     date: "9/27/22",
+  //   },
+  //   {
+  //     id: 1,
+  //     receiver: "Oripeloye Timilehin",
+  //     case: 750,
+  //     amount: "₦ 134,000.00",
+  //     date: "9/27/22",
+  //     color: "red",
+  //   },
+  // ];
 
-  const LoanTable = <DataTable columns={columns} data={data} />;
+  // const customStyles = {
+  //   rows: {
+  //     style: {
+  //       minHeight: "73px",
+  //       // color: "red",
+  //     },
+  //   },
+  // };
+
+  const LoanTable = <List />;
 
   return (
     <div className="p">

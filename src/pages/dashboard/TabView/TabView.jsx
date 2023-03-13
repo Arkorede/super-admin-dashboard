@@ -9,9 +9,9 @@ export default function TabView({ title, tabs = {} }) {
   };
 
   return (
-    <div className="Tabview mt-10">
+    <div className="Tabview mt-10" style={{ marginBottom: "20px" }}>
       {title && <h4 className="title text-lg font-bold">{title}</h4>}
-      <div className="body mt-5 h-[474px] border border-solid border-[#E5EAEF] rounded">
+      <div className="body mt-5 min-h-[487px] border border-solid border-[#E5EAEF] rounded">
         {Object.keys(tabs).length === 0 ? (
           <div>No Tabs</div>
         ) : (
