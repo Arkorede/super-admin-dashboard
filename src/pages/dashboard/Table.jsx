@@ -61,7 +61,7 @@ const List = () => {
         }}
       >
         <TableHead>
-          <TableRow style={{ height: "73px" }}>
+          <TableRow style={{ height: "73px", paddingLeft: "40px" }}>
             <TableCell
               className="tableCell"
               style={{
@@ -100,7 +100,7 @@ const List = () => {
               <TableCell
                 className="tableCell"
                 style={{
-                  width: "170px",
+                  width: "150px",
                 }}
               >
                 <div className="cellWrapper">

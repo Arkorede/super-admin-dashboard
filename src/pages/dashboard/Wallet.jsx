@@ -8,7 +8,7 @@ import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
 // import DataTable from "react-data-table-component";
-import Datatable from "./Datatable";
+// import Datatable from "./Datatable";
 
 export default function Wallet() {
   const [modalOn, setModalOn] = useState(false);
