@@ -61,7 +61,7 @@ const List = () => {
         }}
       >
         <TableHead>
-          <TableRow style={{ height: "73px", paddingLeft: "40px" }}>
+          <TableRow style={{ height: "73px" }}>
             <TableCell
               className="tableCell"
               style={{
@@ -69,6 +69,7 @@ const List = () => {
                 fontWeight: 700,
                 color: "#8A8B9F",
                 fontFamily: "Manrope",
+                paddingLeft: "40px",
               }}
             >
               Receiver
