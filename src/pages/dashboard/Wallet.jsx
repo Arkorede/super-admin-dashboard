@@ -131,7 +131,7 @@ export default function Wallet() {
           </div>
 
           {/* WALLET ACTIVITIES */}
-          <div className="center">
+          <div className="mt-10" style={{ marginBottom: "20px" }}>
             <TabView
               title={"Recent Wallet Activities"}
               tabs={[
