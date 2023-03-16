@@ -1,6 +1,5 @@
 import React from "react";
 import company from "../../components/shared/img/company.png";
-import imageUpload from "./img/imageUpload.png";
 
 export default function CompanyProfile() {
   return (
@@ -97,8 +96,8 @@ export default function CompanyProfile() {
 
                 <div className="flex text-sm text-[#8A8B9F] items-center justify-center">
                   <label
-                    for="file-upload"
-                    class="relative cursor-pointer text-xs font-semibold text-[#8003CD] focus-within:outline-none leading-[20px]"
+                    htmlFor="file-upload"
+                    class="cursor-pointer text-xs font-semibold text-[#8003CD] focus-within:outline-none leading-[20px]"
                   >
                     <span>Click</span>
                     <input
