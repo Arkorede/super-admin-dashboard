@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import transimg1 from "./img/transimg1.png";
 import searchNormal from "../../components/shared/img/searchNormal.png";
 import arrowDown from "./img/arrowDown.png";
 import DataTable from "react-data-table-component";
+import DoubleItem from "./dropdown/DoubleItem";
 
-export default function () {
+export default function PartnerWallet() {
   const customStyles = {
+    table: {
+      style: {
+        minHeight: "500px",
+      },
+    },
     rows: {
       style: {
         minHeight: "73px",
@@ -30,38 +36,46 @@ export default function () {
           <div className="text-sm font-semibold">{row.name}</div>
         </div>
       ),
-      minWidth: "240px",
+      width: "250px",
     },
     {
       name: "Type",
       selector: (row) => (
         <div className="text-sm font-semibold">{row.type}</div>
       ),
+      width: "180px",
     },
     {
       name: "Amount",
       selector: (row) => (
         <div className="text-sm font-semibold text-[#F5222D]">{row.amount}</div>
       ),
+      width: "140px",
     },
     {
       name: "Date",
       selector: (row) => <div className="text-sm font-bold">{row.date}</div>,
+      width: "140px",
     },
     {
       name: "Receipt ID",
       selector: (row) => (
         <div className="text-sm font-semibold">{row.receiptID}</div>
       ),
+      width: "120px",
     },
     {
       name: "Status",
       selector: (row) => (
-        <div className="flex items-center justify-center gap-2 px-4 py-1 bg-[#C2FED3] rounded-[1.875rem]">
-          <div className="w-1.5 h-1.5 bg-[#42BE65] rounded-full">.</div>
-          <div className="text-[0.625rem] font-semibold">{row.status}</div>
+        <div className="flex gap-[55px] flex items-center justify-center gap-[55px]">
+          <div className="flex items-center justify-center gap-2 px-4 py-1 bg-[#C2FED3] rounded-[1.875rem]">
+            <div className="w-1.5 h-1.5 bg-[#42BE65] rounded-full"></div>
+            <div className="text-[0.625rem] font-semibold">{row.status}</div>
+          </div>
+          <DoubleItem />
         </div>
       ),
+      width: "200px",
     },
   ];
 

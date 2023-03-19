@@ -57,7 +57,7 @@ function Sidebar() {
           <p className="text-[#8A8B9F]">Wallet</p>
         </NavLink>
         <NavLink
-          to="/partners"
+          to="/partnershome"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
           className="flex gap-[1.1rem]"
         >

@@ -4,6 +4,8 @@ import Layout from "./components/shared/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Wallet from "./pages/dashboard/Wallet";
 import Partners from "./pages/dashboard/Partners";
+import PartnersHome from "./pages/dashboard/PartnersHome";
+import PartnersView from "./pages/dashboard/PartnersView";
 import LoanRequest from "./pages/dashboard/LoanRequest";
 import Users from "./pages/dashboard/Users";
 import LoanHistory from "./pages/dashboard/LoanHistory";
@@ -20,7 +22,9 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="wallet" element={<Wallet />} />
-        <Route path="partners" element={<Partners />} />
+        <Route path="partnershome/partners" element={<Partners />} />
+        <Route path="partnershome" element={<PartnersHome />} />
+        <Route path="partners/:id" element={<PartnersView />} />
         <Route path="loanrequest" element={<LoanRequest />} />
         <Route path="users" element={<Users />} />
         <Route path="loanhistory" element={<LoanHistory />} />

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 
 import TabView from "./TabView/TabView";
-// import "./Table.css";
-import List from "./Table";
 import FundModal from "./FundModal";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
-// import DataTable from "react-data-table-component";
-// import Datatable from "./Datatable";
+import LoanDisbursed from "./LoanDisbursed";
 
 export default function Wallet() {
   const [modalOn, setModalOn] = useState(false);
@@ -17,75 +14,7 @@ export default function Wallet() {
   const clicked = () => {
     setModalOn(true);
   };
-
-  // const columns = [
-  //   {
-  //     name: "Receiver",
-  //     selector: (row) => row.receiver,
-  //   },
-  //   {
-  //     name: "Case",
-  //     selector: (row) => row.case,
-  //   },
-  //   {
-  //     name: "Amount",
-  //     selector: (row) => row.amount,
-  //   },
-  //   {
-  //     name: "Date",
-  //     selector: (row) => row.date,
-  //   },
-  // ];
-
-  // const data = [
-  //   {
-  //     id: 1,
-  //     receiver: "Oripeloye Timilehin",
-  //     case: 750,
-  //     amount: "₦ 134,000.00",
-  //     date: "9/27/22",
-  //   },
-  //   {
-  //     id: 1,
-  //     receiver: "Oripeloye Timilehin",
-  //     case: 750,
-  //     amount: "₦ 134,000.00",
-  //     date: "9/27/22",
-  //   },
-  //   {
-  //     id: 1,
-  //     receiver: "Oripeloye Timilehin",
-  //     case: 750,
-  //     amount: "₦ 134,000.00",
-  //     date: "9/27/22",
-  //   },
-  //   {
-  //     id: 1,
-  //     receiver: "Oripeloye Timilehin",
-  //     case: 750,
-  //     amount: "₦ 134,000.00",
-  //     date: "9/27/22",
-  //   },
-  //   {
-  //     id: 1,
-  //     receiver: "Oripeloye Timilehin",
-  //     case: 750,
-  //     amount: "₦ 134,000.00",
-  //     date: "9/27/22",
-  //     color: "red",
-  //   },
-  // ];
-
-  // const customStyles = {
-  //   rows: {
-  //     style: {
-  //       minHeight: "73px",
-  //       // color: "red",
-  //     },
-  //   },
-  // };
-
-  const LoanTable = <List />;
+  const LoanDis = <LoanDisbursed />;
 
   return (
     <div className="p">
@@ -137,7 +66,7 @@ export default function Wallet() {
               tabs={[
                 { name: "All Activities", content: "All Activities" },
                 { name: "Wallet Top Up", content: " Wallet Top Up" },
-                { name: "Loan Disbursed", content: LoanTable },
+                { name: "Loan Disbursed", content: LoanDis },
               ]}
             />
           </div>

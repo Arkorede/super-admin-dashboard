@@ -1,18 +1,8 @@
-import React, { useState, useLayoutEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import "./TabView.css";
 
-export default function PartnerTab({ title, tabs = {} }) {
-  const { pathname } = useLocation();
-
+export default function DetailTab({ title, tabs = {} }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-
-  useLayoutEffect(() => {
-    if (pathname === "/partners/*") {
-      setActiveTabIndex(1);
-      console.log("Partners!");
-    }
-  }, [pathname]);
 
   const activateTab = (index) => {
     setActiveTabIndex(index);
@@ -21,12 +11,12 @@ export default function PartnerTab({ title, tabs = {} }) {
   return (
     <div className="Tabview">
       {title && <h4 className="title text-lg font-bold">{title}</h4>}
-      <div className="body">
+      <div className="body mt-8 min-h-[408px] border border-solid border-[#E5EAEF] rounded mb-44">
         {Object.keys(tabs).length === 0 ? (
           <div>No Tabs</div>
         ) : (
           <div>
-            <div className="tabs flex gap-[3.875rem] font-medium text-sm text-[#8A8B9F] leading-[19px]">
+            <div className="tabs flex p-6 border-b border-solid border-[#E5EAEF] justify-between font-medium text-sm text-[#8A8B9F] leading-[19px]">
               {tabs.map((tab, index) => (
                 <label
                   key={index}
@@ -37,7 +27,9 @@ export default function PartnerTab({ title, tabs = {} }) {
                 </label>
               ))}
             </div>
-            <div className="content mt-6">{tabs[activeTabIndex].content}</div>
+            <div className="content text-center">
+              {tabs[activeTabIndex].content}
+            </div>
           </div>
         )}
       </div>

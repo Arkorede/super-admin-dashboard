@@ -1,7 +1,7 @@
 import React from "react";
 
-function LoanRequest() {
-  return <div>Loan Request Page</div>;
-}
+const LoanRequest = () => {
+  return <div>LoanRequest</div>;
+};
 
 export default LoanRequest;

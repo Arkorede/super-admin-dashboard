@@ -1,10 +1,21 @@
 import React from "react";
 import arrowDown from "./img/arrowDown.png";
-import searchNormal from "../../components/shared/img/searchNormal.png";
 import requestImg from "./img/requestImg.png";
+import eye from "./../login/eye.png";
+import download from "./img/download.png";
+import infoCircle from "./img/infoCircle.png";
+import searchNormal from "../../components/shared/img/searchNormal.png";
 import DataTable from "react-data-table-component";
+import { useNavigate } from "react-router-dom";
+import TripleItem from "./dropdown/TripleItem";
 
 export default function LoanRequested() {
+  const navigate = useNavigate();
+
+  const handleViewDetails = (item) => {
+    navigate(`/partners/${item.id}`, { state: { partnerDetails: item } });
+  };
+
   const customStyles = {
     rows: {
       style: {
@@ -24,47 +35,58 @@ export default function LoanRequested() {
     {
       name: "Full Name",
       selector: (row) => (
-        <div className="flex gap-4 items-center justify-center">
+        <div className="flex gap-4 items-center justify-center ml-0">
           <img src={requestImg} alt="a person" className="w-8 h-8" />
           <div className="text-sm font-semibold">{row.fullName}</div>
         </div>
       ),
-      minWidth: "210px",
+      width: "210px",
     },
     {
       name: "Email",
       selector: (row) => (
         <div className="text-sm font-semibold">{row.email}</div>
       ),
-      minWidth: "240px",
+      width: "240px",
     },
     {
       name: "Address",
       selector: (row) => (
         <div className="text-sm font-semibold">{row.address}</div>
       ),
-      minWidth: "220px",
+      width: "220px",
     },
     {
       name: "C.S",
       selector: (row) => (
         <div className="text-sm font-semibold text-[#42BE65]">{row.cs}</div>
       ),
-      minWidth: "60px",
+      width: "57px",
     },
     {
       name: "Amount",
       selector: (row) => (
         <div className="text-sm font-semibold">{row.amount}</div>
       ),
-      minWidth: "150px",
+      width: "120px",
     },
     {
       name: "Date",
       selector: (row) => (
-        <div className="text-sm font-semibold">{row.date}</div>
+        <div className="flex gap-10">
+          <div className="text-sm font-semibold">{row.date}</div>
+          <TripleItem
+            img1={eye}
+            img2={download}
+            img3={infoCircle}
+            button1={"View"}
+            button2={"Download"}
+            button3={"Send to Recova"}
+            onClick1={() => handleViewDetails(row)}
+          />
+        </div>
       ),
-      minWidth: "100px",
+      width: "140px",
     },
   ];
 
@@ -79,7 +101,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 2,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
@@ -88,7 +110,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 3,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
@@ -97,7 +119,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 4,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
@@ -106,7 +128,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 5,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
@@ -115,7 +137,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 6,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
@@ -124,7 +146,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 7,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
@@ -133,7 +155,7 @@ export default function LoanRequested() {
       date: "9/27/22",
     },
     {
-      id: 1,
+      id: 8,
       fullName: "Oripeloye Timilehin",
       email: "Timilehinoripeloye@gmail.com",
       address: "10, Lawani street, abule oja",
