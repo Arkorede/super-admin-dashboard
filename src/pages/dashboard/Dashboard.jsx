@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import FundModal from "./FundModal";
+import FundModal from "./modal/FundModal";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
@@ -8,7 +8,6 @@ import user from "./img/user.png";
 import activity from "./img/activity.png";
 import naira from "./img/naira.png";
 import arrowUp from "./img/arrowUp.png";
-import "./Dashboard.css";
 
 function Dashboard() {
   const [modalOn, setModalOn] = useState(false);

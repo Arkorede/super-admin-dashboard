@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 import TabView from "./TabView/TabView";
-import FundModal from "./FundModal";
+import FundModal from "./modal/FundModal";
 import ellipseWalletTop from "./img/ellipseWalletTop.png";
+import arrowLeft from "./img/arrowLeft.png";
+import arrowDown from "./img/arrowDown.png";
 import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import add from "./img/add.png";
 import LoanDisbursed from "./LoanDisbursed";
+import closeModal from "./img/closeModal.png";
 
 export default function Wallet() {
   const [modalOn, setModalOn] = useState(false);
@@ -14,6 +17,17 @@ export default function Wallet() {
   const clicked = () => {
     setModalOn(true);
   };
+
+  const handleProceedClick = () => {
+    setChoice(true);
+    setModalOn(false);
+  };
+
+  const handleCancelClick = () => {
+    setChoice(false);
+    setModalOn(false);
+  };
+
   const LoanDis = <LoanDisbursed />;
 
   return (
@@ -35,6 +49,94 @@ export default function Wallet() {
               <img src={add} alt="add icon" className="w-4 h-4" />
               <p className="font-bold text-[0.625rem]">FundWallet</p>
             </button>
+            {choice && (
+              <div className="p">
+                <div
+                  className="relative z-10"
+                  aria-labelledby="modal-title"
+                  role="dialog"
+                  aria-modal="true"
+                >
+                  <div className="fixed inset-0 bg-[#17191C66] bg-opacity-40 transition-opacity"></div>
+
+                  <div className="fixed inset-0 z-10 overflow-y-auto">
+                    <div className="flex items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                      <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8">
+                        <div className="bg-white w-[829px] h-[589px]">
+                          <div className="flex h-[67px] bg-[#F6F6F6] p-6 justify-between">
+                            <button className="">
+                              <img
+                                src={arrowLeft}
+                                alt="arrow-left"
+                                className="w-6 h-6"
+                                onClick={clicked}
+                              />
+                            </button>
+                            <button className="" onClick={handleCancelClick}>
+                              <img
+                                src={closeModal}
+                                alt=" close icon"
+                                className="w-8 h-8"
+                              />
+                            </button>
+                          </div>
+                          <div className="pl-[183px] pr-[182px]">
+                            <div className="mt-10 font-bold text-lg leading-[1.375rem] text-center">
+                              Debit Card
+                            </div>
+                            <div className="flex flex-col mt-8">
+                              <div className="flex py-[1.125rem] px-4 justify-between rounded-2xl bg-[#F5F5F5]">
+                                <p className="font-semibold text-sm">Amount</p>
+                              </div>
+
+                              <div className="flex py-[1.125rem] px-4 mt-5 justify-between rounded-2xl bg-[#F5F5F5]">
+                                <p className="font-semibold text-sm">
+                                  Choose Debit Card
+                                </p>
+                                <img
+                                  src={arrowDown}
+                                  alt="arrow-down"
+                                  className="w-6 h-6"
+                                />
+                              </div>
+                              <div className="flex items-center mt-7 gap-2">
+                                <img
+                                  src={add}
+                                  alt="add"
+                                  className="w-6 h-6"
+                                  style={{
+                                    filter:
+                                      "brightness(0) saturate(100%) invert(19%) sepia(70%) saturate(4770%) hue-rotate(273deg) brightness(76%) contrast(124%)",
+                                  }}
+                                />
+                                <p className="font-semibold text-sm text-[#8003CD]">
+                                  Add New Debit Card
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex h-[67px] bg-[#F6F6F6] px-6 justify-between mt-[173px] justify-center items-center">
+                            <button
+                              className="p-2.5 rounded text-xs font-bold border-[0.5px] border-solid border-[#DCDCE4] bg-white"
+                              onClick={handleCancelClick}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              className="p-2.5 rounded text-xs font-bold bg-[#8003CD] text-white"
+                              onClick={handleProceedClick}
+                            >
+                              Proceed
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             {modalOn && (
               <FundModal setModalOn={setModalOn} setChoice={setChoice} />
             )}

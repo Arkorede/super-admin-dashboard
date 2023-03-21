@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import closeModal from "./img/closeModal.png";
-import card from "./img/card.png";
-import apple from "./img/apple.png";
-import paypal from "./img/paypal.png";
-import ellipsePayment from "./img/ellipsePayment.png";
+import closeModal from "../img/closeModal.png";
+import card from "../img/card.png";
+import apple from "../img/apple.png";
+import paypal from "../img/paypal.png";
+import ellipsePayment from "../img/ellipsePayment.png";
 
 const FundModal = ({ setModalOn, setChoice }) => {
-  const handleOKClick = () => {
+  const handleProceedClick = () => {
     setChoice(true);
     setModalOn(false);
   };
@@ -18,17 +18,17 @@ const FundModal = ({ setModalOn, setChoice }) => {
 
   return (
     <div
-      class="relative z-10"
+      className="relative z-10"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
     >
-      <div class="fixed inset-0 bg-[#17191C66] bg-opacity-40 transition-opacity"></div>
+      <div className="fixed inset-0 bg-[#17191C66] bg-opacity-40 transition-opacity"></div>
 
-      <div class="fixed inset-0 z-10 overflow-y-auto">
-        <div class="flex items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8">
-            <div class="bg-white w-[829px] h-[589px]">
+      <div className="fixed inset-0 z-10 overflow-y-auto">
+        <div className="flex items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8">
+            <div className="bg-white w-[829px] h-[589px]">
               <div className="flex h-[67px] bg-[#F6F6F6] p-6 justify-between">
                 <p className="font-bold text-base">Fund Wallet</p>
                 <button className="" onClick={handleCancelClick}>
@@ -99,7 +99,7 @@ const FundModal = ({ setModalOn, setChoice }) => {
                 </button>
                 <button
                   className="p-2.5 rounded text-xs font-bold bg-[#8003CD] text-white"
-                  onClick={handleOKClick}
+                  onClick={handleProceedClick}
                 >
                   Proceed
                 </button>

@@ -1,19 +1,12 @@
 import React from "react";
 
-// import "./Partners.css";
 import credbevyB from "./img/credbevyB.png";
 import PartnerWallet from "./PartnerWallet";
-import PartnerDetails from "./PartnerDetails";
+import LoanRequested from "./LoanRequested";
 import CompanyProfile from "./CompanyProfile";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { useLocation } from "react-router-dom";
 
-function PartnersView() {
-  const { state } = useLocation();
-
-  const partnerDetails = state?.partnerDetails;
-  console.log(state);
-
+function Partners() {
   return (
     <div className="mt-[44px]">
       <div className="flex flex-end">
@@ -31,7 +24,7 @@ function PartnersView() {
         +2349055380387
       </p>
       <div className="mt-[58px] px-5">
-        <Tabs defaultIndex={1}>
+        <Tabs className={"major-tabs"}>
           <TabList className={"major-tab-list"}>
             <Tab className={"major-tab"}>Wallet</Tab>
             <Tab className={"major-tab"}>Loan Requested</Tab>
@@ -46,7 +39,7 @@ function PartnersView() {
             <PartnerWallet />
           </TabPanel>
           <TabPanel>
-            <PartnerDetails partnerDetails={partnerDetails} />
+            <LoanRequested />
           </TabPanel>
           <TabPanel>
             <CompanyProfile />
@@ -64,20 +57,9 @@ function PartnersView() {
             <h2>Loan Products</h2>
           </TabPanel>
         </Tabs>
-        {/* <TabView
-          tabs={[
-            { name: "Wallet", content: walletTab },
-            { name: "Loan Requested", content: LoanReq },
-            { name: "Company Profile", content: companyPro },
-            { name: "Users", content: "Users" },
-            { name: "Loan History", content: "Loan History" },
-            { name: "Integrations", content: "Integrations" },
-            { name: "Loan Products", content: "Loan Products" },
-          ]}
-        /> */}
       </div>
     </div>
   );
 }
 
-export default PartnersView;
+export default Partners;

@@ -3,8 +3,8 @@ import Login from "./pages/login/Login";
 import Layout from "./components/shared/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Wallet from "./pages/dashboard/Wallet";
+import Partner from "./pages/dashboard/Partner";
 import Partners from "./pages/dashboard/Partners";
-import PartnersHome from "./pages/dashboard/PartnersHome";
 import PartnersView from "./pages/dashboard/PartnersView";
 import LoanRequest from "./pages/dashboard/LoanRequest";
 import Users from "./pages/dashboard/Users";
@@ -22,8 +22,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="wallet" element={<Wallet />} />
-        <Route path="partnershome/partners" element={<Partners />} />
-        <Route path="partnershome" element={<PartnersHome />} />
+        <Route path="partners/partner" element={<Partner />} />
+        <Route path="partners" element={<Partners />} />
         <Route path="partners/:id" element={<PartnersView />} />
         <Route path="loanrequest" element={<LoanRequest />} />
         <Route path="users" element={<Users />} />
