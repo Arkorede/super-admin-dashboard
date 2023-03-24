@@ -57,7 +57,7 @@ export default function Users() {
       selector: (row) => (
         <div className="text-sm font-semibold">{row.phoneNumber}</div>
       ),
-      width: "140px",
+      width: "150px",
     },
     {
       name: "C.S",
@@ -74,7 +74,7 @@ export default function Users() {
           <DoubleItem onClick1={handleViewUsers} />
         </div>
       ),
-      width: "130px",
+      width: "122px",
     },
   ];
 
