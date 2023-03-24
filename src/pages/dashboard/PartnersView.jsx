@@ -1,6 +1,5 @@
 import React from "react";
 
-// import "./Partners.css";
 import credbevyB from "./img/credbevyB.png";
 import PartnerWallet from "./PartnerWallet";
 import PartnerDetails from "./PartnerDetails";

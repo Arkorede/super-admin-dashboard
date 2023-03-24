@@ -8,6 +8,7 @@ import Partners from "./pages/dashboard/Partners";
 import PartnersView from "./pages/dashboard/PartnersView";
 import LoanRequest from "./pages/dashboard/LoanRequest";
 import Users from "./pages/dashboard/Users";
+import User from "./pages/dashboard/User";
 import LoanHistory from "./pages/dashboard/LoanHistory";
 import Documents from "./pages/dashboard/Documents";
 import Transactions from "./pages/dashboard/Transactions";
@@ -27,6 +28,7 @@ function App() {
         <Route path="partners/:id" element={<PartnersView />} />
         <Route path="loanrequest" element={<LoanRequest />} />
         <Route path="users" element={<Users />} />
+        <Route path="users/user" element={<User />} />
         <Route path="loanhistory" element={<LoanHistory />} />
         <Route path="documents" element={<Documents />} />
         <Route path="transactions" element={<Transactions />} />

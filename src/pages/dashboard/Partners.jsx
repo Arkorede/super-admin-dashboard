@@ -156,8 +156,8 @@ export default function Partners() {
   ];
 
   return (
-    <div className="p-5 mt-16">
-      <div className="font-bold text-[34px] leading-9 mb-9">Partners</div>
+    <div className="p-5 mt-7">
+      <div className="font-bold text-[34px] leading-9 mb-10">Partners</div>
       <div className="flex gap-4">
         <div className="flex border border-[#dee2e6] rounded-md items-center justify-center gap-2 pl-5 w-[200px] h-[43px]">
           <img src={searchNormal} alt="search icon" className="w-4 h-4" />
