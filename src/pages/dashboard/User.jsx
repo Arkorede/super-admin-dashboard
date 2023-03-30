@@ -1,5 +1,7 @@
 import React from "react";
 import requestImg from "./img/requestImg.png";
+import document from "./img/document.png";
+import arrowDown from "./img/arrowDown.png";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 const User = () => {
@@ -81,26 +83,54 @@ const User = () => {
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="flex gap-[22px] mt-6 ml-6">
+              <div className="flex gap-10 mt-6 ml-6">
                 <div className="flex flex-col gap-6 text-left font-semibold text-sm text-[#8A8B9F]">
-                  <p className="">Product type</p>
-                  <p className="">Amount</p>
-                  <p className="">Monthly Payment</p>
-                  <p className="">Interest Rate</p>
-                  <p className="">Duration</p>
+                  <p className="">Address</p>
+                  <p className="">LGA</p>
+                  <p className="">State</p>
                 </div>
 
                 <div className="flex flex-col gap-6 text-left font-semibold text-sm">
-                  <p className="">Silver</p>
-                  <p className=""># 130, 000</p>
-                  <p className=""># 20, 000</p>
-                  <p className="">12%</p>
-                  <p className="">4 months</p>
+                  <p className="">10, Lawani Street, Abule Oja, Yaba, Lagos</p>
+                  <p className="">Lagos Mainland</p>
+                  <p className="">Lagos</p>
                 </div>
               </div>
             </TabPanel>
-            <TabPanel>Bank Info</TabPanel>
-            <TabPanel>Next of Kin</TabPanel>
+            <TabPanel>
+              {" "}
+              <div className="flex gap-10 mt-6 ml-6">
+                <div className="flex flex-col gap-6 text-left font-semibold text-sm text-[#8A8B9F]">
+                  <p className="">Bank Name</p>
+                  <p className="">Account Name</p>
+                  <p className="">Phone Number</p>
+                </div>
+
+                <div className="flex flex-col gap-6 text-left font-semibold text-sm">
+                  <p className="">Guarantee Trust Bank (GTB)</p>
+                  <p className="">Oripeloye Timilehin John </p>
+                  <p className="">+2349055380387</p>
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel>
+              {" "}
+              <div className="flex gap-10 mt-6 ml-6">
+                <div className="flex flex-col gap-6 text-left font-semibold text-sm text-[#8A8B9F]">
+                  <p className="">First Name</p>
+                  <p className="">Last Name</p>
+                  <p className="">Phone Number</p>
+                  <p className="">Relationship</p>
+                </div>
+
+                <div className="flex flex-col gap-6 text-left font-semibold text-sm">
+                  <p className="">Oripeloye</p>
+                  <p className="">Timilehin</p>
+                  <p className="">+2349055380387</p>
+                  <p className="">Brother</p>
+                </div>
+              </div>
+            </TabPanel>
             <TabPanel>Business</TabPanel>
             <TabPanel>Proof of Identity</TabPanel>
           </Tabs>

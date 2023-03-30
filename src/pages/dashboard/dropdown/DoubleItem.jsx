@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import eye from "../../login/eye.png";
 import download from "../../dashboard/img/download.png";
 
 export default function Dropdown({ onClick1 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  let dropdownRef = useRef();
+
+  useEffect(() => {
+    const handleClicksOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClicksOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClicksOutside);
+    };
+  }, [dropdownRef]);
+
   return (
-    <div className="">
+    <div className="" ref={dropdownRef}>
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={() => setIsOpen(!isOpen)}
         className="relative flex flex-col gap-1"
       >
         <span className="w-1 h-1 bg-[#A0A0A0] rounded-full"></span>
