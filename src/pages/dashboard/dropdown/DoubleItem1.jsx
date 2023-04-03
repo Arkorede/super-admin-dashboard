@@ -33,7 +33,7 @@ export default function Dropdown({ onClick1 }) {
       </button>
       {isOpen && (
         <div
-          className="absolute z-50 flex flex-col items-start justify-between h-[109px] w-[144px] top-[46px] right-[19px] bg-white px-4 py-6 rounded"
+          className="absolute z-10 flex flex-col items-start justify-between h-[109px] w-[144px] top-[46px] right-[19px] bg-white px-4 py-6 rounded"
           style={{ boxShadow: "4px 4px 12px rgba(114, 114, 114, 0.25)" }}
         >
           <button

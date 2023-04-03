@@ -42,7 +42,7 @@ export default function Dropdown({
       {isOpen && (
         <div className="">
           <div
-            className="absolute z-50 flex flex-col items-start justify-between h-[144px] w-[144px] top-[46px] right-[18px] bg-white px-4 py-6 rounded"
+            className="absolute z-10 flex flex-col items-start justify-between h-[144px] w-[144px] top-[46px] right-[18px] bg-white px-4 py-6 rounded"
             style={{ boxShadow: "4px 4px 12px rgba(114, 114, 114, 0.25)" }}
           >
             <button

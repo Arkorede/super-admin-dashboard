@@ -7,7 +7,7 @@ import closeModal from "./img/closeModal.png";
 import tickCircle from "./img/tickCircle.png";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
-import DoubleItem from "./dropdown/DoubleItem";
+import DoubleItem1 from "./dropdown/DoubleItem1";
 import PartnerModal from "./modal/PartnerModal";
 
 export default function Partners() {
@@ -89,7 +89,7 @@ export default function Partners() {
             <div className="w-1.5 h-1.5 bg-[#42BE65] rounded-full"></div>
             <div className="text-[0.625rem] font-semibold">{row.status}</div>
           </div>
-          <DoubleItem onClick1={handleViewPartners} />
+          <DoubleItem1 onClick1={handleViewPartners} />
         </div>
       ),
       width: "200px",

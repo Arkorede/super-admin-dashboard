@@ -5,7 +5,7 @@ import transimg1 from "./img/transimg1.png";
 import searchNormal from "../../components/shared/img/searchNormal.png";
 import arrowDown from "./img/arrowDown.png";
 import DataTable from "react-data-table-component";
-import DoubleItem from "./dropdown/DoubleItem";
+import DoubleItem1 from "./dropdown/DoubleItem1";
 
 export default function PartnerWallet() {
   const customStyles = {
@@ -72,7 +72,7 @@ export default function PartnerWallet() {
             <div className="w-1.5 h-1.5 bg-[#42BE65] rounded-full"></div>
             <div className="text-[0.625rem] font-semibold">{row.status}</div>
           </div>
-          <DoubleItem />
+          <DoubleItem1 />
         </div>
       ),
       width: "200px",

@@ -3,7 +3,7 @@ import arrowDown from "./img/arrowDown.png";
 import requestImg from "./img/requestImg.png";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
-import DoubleItem from "./dropdown/DoubleItem";
+import DoubleItem1 from "./dropdown/DoubleItem1";
 
 export default function Users() {
   const navigate = useNavigate();
@@ -71,7 +71,7 @@ export default function Users() {
       selector: (row) => (
         <div className="flex gap-8">
           <div className="text-sm font-semibold">{row.joined}</div>
-          <DoubleItem onClick1={handleViewUsers} />
+          <DoubleItem1 onClick1={handleViewUsers} />
         </div>
       ),
       width: "122px",
@@ -156,7 +156,6 @@ export default function Users() {
   return (
     <div className="p-5 mt-6">
       <div className="font-bold text-[34px] leading-9 mb-8">Users</div>
-      {/* LOAN REQUESTED TABLE */}
       <div className="border border-[#E5EAEF] rounded-lg h-[784px] mt-[36px] mb-20">
         <div className="flex items-center justify-between text-xl font-bold h-[67px] leading-[27.32px] border-b border-solid border-[#E5EAEF] px-8">
           <div className="flex items-center justify-center gap-[0.9375rem]">

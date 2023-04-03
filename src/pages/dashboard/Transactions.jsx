@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-// import ellipseWalletTop from "./img/ellipseWalletTop.png";
-// import ellipseWalletRight from "./img/ellipseWalletRight.png";
 import transimg1 from "./img/transimg1.png";
 import searchNormal from "../../components/shared/img/searchNormal.png";
 import arrowDown from "./img/arrowDown.png";
 import DataTable from "react-data-table-component";
-import DoubleItem from "./dropdown/DoubleItem";
+import DoubleItem1 from "./dropdown/DoubleItem1";
 import TransModal from "./modal/TransModal";
 
 export default function Transactions() {
@@ -85,7 +83,7 @@ export default function Transactions() {
             <div className="w-1.5 h-1.5 bg-[#42BE65] rounded-full"></div>
             <div className="text-[0.625rem] font-semibold">{row.status}</div>
           </div>
-          <DoubleItem onClick1={clicked} />
+          <DoubleItem1 onClick1={clicked} />
         </div>
       ),
       width: "200px",
