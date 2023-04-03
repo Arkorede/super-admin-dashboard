@@ -9,6 +9,7 @@ import add from "./img/add.png";
 import DataTable from "react-data-table-component";
 import DoubleItem2 from "./dropdown/DoubleItem2";
 import UserModal from "./modal/UserModal";
+import DeleteModal from "./modal/DeleteModal";
 import UserRoles from "./UserRoles";
 import company from "../../components/shared/img/company.png";
 
@@ -16,8 +17,16 @@ export default function Settings() {
   const [userModalOn, setUserModalOn] = useState(false);
   const [userChoice, setUserChoice] = useState(false);
 
+  const [deleteModalOn, setDeleteModalOn] = useState(false);
+  const [deleteChoice, setDeleteChoice] = useState(false);
+
   const clicked1 = () => {
     setUserModalOn(true);
+  };
+
+  const clicked2 = () => {
+    setDeleteModalOn(true);
+    console.log("grow");
   };
 
   const handleProceedClick = () => {
@@ -92,7 +101,11 @@ export default function Settings() {
               {row.permission}
             </div>
           </div>
-          <DoubleItem2 button1={"Edit Permission"} onClick1={clicked1} />
+          <DoubleItem2
+            button1={"Edit Permission"}
+            onClick1={clicked1}
+            onClick2={clicked2}
+          />
         </div>
       ),
       width: "245px",
@@ -433,6 +446,12 @@ export default function Settings() {
         <UserModal
           setUserModalOn={setUserModalOn}
           setUserChoice={setUserChoice}
+        />
+      )}
+      {deleteModalOn && (
+        <DeleteModal
+          setDeleteModalOn={setDeleteModalOn}
+          setDeleteChoice={setDeleteChoice}
         />
       )}
     </div>
