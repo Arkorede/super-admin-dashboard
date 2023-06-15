@@ -104,7 +104,7 @@ const PartnerDetails = ({ partnerDetails }) => {
     <div className="mt-[55px]">
       <div className="flex items-center gap-[57px] h-[217px] border border-[#E5EAEF] rounded">
         <div className="flex flex-col gap-4 pl-6">
-          <img src={detailImg} alt="a person" className="w-[82px] h-[82px" />
+          <img src={detailImg} alt="a person" className="w-[82px] h-[82px]" />
           <p className="font-bold text-base">{partnerDetails.fullName}</p>
         </div>
         <div className="flex flex-col gap-4 font-semibold text-xs text-[#8A8B9F]">

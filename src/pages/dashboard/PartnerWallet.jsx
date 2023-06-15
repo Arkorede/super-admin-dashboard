@@ -119,7 +119,7 @@ export default function PartnerWallet() {
   ];
   return (
     <div className="p">
-      <div className="relative wallet bg-[#8003CD] h-[210px] rounded-lg mt-[59px]">
+      <div className="relative wallet bg-darkPurple h-[210px] rounded-lg mt-[59px]">
         <p className="text-white pt-[71px] pl-[40px] text-sm font-bold">
           Wallet Balance
         </p>

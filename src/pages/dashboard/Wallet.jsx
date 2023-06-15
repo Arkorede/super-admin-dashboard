@@ -35,7 +35,7 @@ export default function Wallet() {
       <div className="w-full">
         <div className="p-5 mt-6">
           <div className="font-bold text-[34px] mb-4">Wallet</div>
-          <div className="relative wallet bg-[#8003CD] h-[210px] rounded-lg">
+          <div className="relative wallet bg-darkPurple h-[210px] rounded-lg">
             <p className="text-white pt-[35px] pl-[40px] text-sm font-bold">
               Wallet Balance
             </p>

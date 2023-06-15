@@ -48,7 +48,7 @@ const AddModal = ({ setAddModalOn, setAddChoice }) => {
                     </p>
                     <label
                       htmlFor="file-upload"
-                      class="cursor-pointer pl-1 text-[10px] font-semibold text-[#8003CD] focus-within:outline-none leading-[20px]"
+                      class="cursor-pointer pl-1 text-[10px] font-semibold text-darkPurple focus-within:outline-none leading-[20px]"
                     >
                       <span>browse</span>
                       <input
@@ -70,7 +70,7 @@ const AddModal = ({ setAddModalOn, setAddChoice }) => {
                   Cancel
                 </button>
                 <button
-                  className="p-2.5 rounded text-xs font-bold bg-[#8003CD] text-white"
+                  className="p-2.5 rounded text-xs font-bold bg-darkPurple text-white"
                   onClick={handleProceedClick}
                 >
                   Upload

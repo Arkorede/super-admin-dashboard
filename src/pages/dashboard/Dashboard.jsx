@@ -24,7 +24,7 @@ function Dashboard() {
         <div className="p-5 mt-6">
           <div className="font-bold text-[34px] mb-4">Dashboard</div>
           {/* WALLET */}
-          <div className="relative wallet bg-[#8003CD] h-[210px] rounded-lg">
+          <div className="relative bg-darkPurple h-[210px] rounded-lg">
             <p className="text-white pt-[35px] pl-[40px] text-sm font-bold">
               Wallet Balance
             </p>
@@ -65,7 +65,7 @@ function Dashboard() {
           {/* LOAN VALUES */}
           <div className="grid grid-cols-3 gap-5">
             <div className="relative rounded-lg px-[24px] py-[26px] border border-[#E5EAEF] mt-6">
-              <div className="mt-0.5 bg-[#F7EBFF] w-[33px] h-[33px] flex items-center justify-center rounded-full">
+              <div className="mt-0.5 bg-lightPurple w-[33px] h-[33px] flex items-center justify-center rounded-full">
                 <img src={user} alt="user icon" className="w-4 h-4" />
               </div>
               <p className="text-[#A1A6B0] text-[0.625rem] mt-6">

@@ -142,7 +142,7 @@ const MoveModal = ({ setModalOn, setChoice }) => {
                   </div>
                 )} */}
                 <button
-                  className="p-2.5 rounded text-xs font-bold bg-[#8003CD] text-white"
+                  className="p-2.5 rounded text-xs font-bold bg-darkPurple text-white"
                   onClick={handleMoveClick}
                 >
                   Move

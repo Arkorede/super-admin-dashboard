@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InviteModal() {
+export default function InviteModal({ setInviteModalOn }) {
   return (
     <div
       className="relative z-10"

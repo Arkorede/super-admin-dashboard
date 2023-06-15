@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login";
+import PrivateRoutes from "./util/PrivateRoutes";
 import Layout from "./components/shared/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Wallet from "./pages/dashboard/Wallet";
@@ -20,6 +21,7 @@ function App() {
     // <Router>
     <Routes>
       <Route exact path="/" element={<Login />} />
+      {/* <Route element={<PrivateRoutes />}> */}
       <Route path="/" element={<Layout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="wallet" element={<Wallet />} />
@@ -34,6 +36,7 @@ function App() {
         <Route path="transactions" element={<Transactions />} />
         <Route path="settings" element={<Settings />} />
       </Route>
+      {/* </Route> */}
     </Routes>
     // </Router>
   );

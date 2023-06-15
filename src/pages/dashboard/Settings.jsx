@@ -94,7 +94,7 @@ export default function Settings() {
       selector: (row) => (
         <div className="flex gap-[42px]">
           <div className="flex gap-2">
-            <div className="text-xs font-semibold text-[#8003CD] px-2.5 py-1 bg-[#F3DFFF] rounded">
+            <div className="text-xs font-semibold text-darkPurple px-2.5 py-1 bg-[#F3DFFF] rounded">
               Admin
             </div>
             <div className="text-xs font-semibold text-[#FA4D56] px-2.5 py-1 bg-[#FFDADC] rounded">
@@ -204,7 +204,7 @@ export default function Settings() {
                   Cancel
                 </button>
                 <button
-                  className="px-[34px] py-2.5 rounded text-xs font-bold bg-[#8003CD] text-white"
+                  className="px-[34px] py-2.5 rounded text-xs font-bold bg-darkPurple text-white"
                   onClick={handleProceedClick}
                 >
                   Save
@@ -214,7 +214,7 @@ export default function Settings() {
                 <div className="flex gap-[238px]">
                   <label className="text-sm font-bold leading-[19.12px]">
                     Company Name{" "}
-                    <span className="text-sm font-bold leading-[19.12px] text-[#8003CD]">
+                    <span className="text-sm font-bold leading-[19.12px] text-darkPurple">
                       *
                     </span>
                   </label>
@@ -253,7 +253,7 @@ export default function Settings() {
                     className="text-sm font-bold leading-[19.12px]"
                   >
                     Company Website{" "}
-                    <span className="text-sm font-bold leading-[19.12px] text-[#8003CD]">
+                    <span className="text-sm font-bold leading-[19.12px] text-darkPurple">
                       *
                     </span>
                   </label>
@@ -280,7 +280,7 @@ export default function Settings() {
                     className="text-sm font-bold leading-[19.12px]"
                   >
                     Company Logo{" "}
-                    <span className="text-sm font-bold leading-[19.12px] text-[#8003CD]">
+                    <span className="text-sm font-bold leading-[19.12px] text-darkPurple">
                       *
                     </span>
                   </label>
@@ -309,7 +309,7 @@ export default function Settings() {
                         <div className="flex text-sm text-[#8A8B9F] items-center justify-center">
                           <label
                             htmlFor="file-upload"
-                            class="cursor-pointer text-xs font-semibold text-[#8003CD] focus-within:outline-none leading-[20px]"
+                            class="cursor-pointer text-xs font-semibold text-darkPurple focus-within:outline-none leading-[20px]"
                           >
                             <span>Click</span>
                             <input

@@ -4,7 +4,7 @@ import transimg1 from "./img/transimg1.png";
 import folderCloud from "./img/folderCloud.png";
 import add from "./img/add.png";
 import addSquare from "./img/addSquare.png";
-import eye from "./../login/eye.png";
+import eye from "../login/img/eye.png";
 import download from "./img/download.png";
 import cloudChange from "./img/cloudChange.png";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";

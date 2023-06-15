@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import credbevyLogo from "../../pages/login/credbevyLogo.png";
+import credbevyLogo from "../../pages/login/img/credbevyLogo.png";
 import category from "./img/category.png";
 import emptyWallet from "./img/emptyWallet.png";
 import chart from "./img/chart.png";
@@ -14,7 +14,7 @@ import setting from "./img/setting.png";
 function Sidebar() {
   let activeStyle = {
     filter:
-      "brightness(0) saturate(100%) invert(19%) sepia(70%) saturate(4770%) hue-rotate(273deg) brightness(76%) contrast(124%)",
+      "brightness(0) saturate(100%) invert(18%) sepia(41%) saturate(3965%) hue-rotate(277deg) brightness(93%) contrast(99%)",
     fontWeight: 600,
   };
 
@@ -37,7 +37,7 @@ function Sidebar() {
             <img
               src={category}
               alt="category icon"
-              className="w-6 h- brightness-[2.5]"
+              className="w-6 h-6 brightness-[2.5]"
             />
           </NavLink>
           <NavLink
