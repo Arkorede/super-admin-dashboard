@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import credbevyLogo from "./img/credbevyLogo.png";
+import bevy from "./img/bevy.png";
+import credbevy from "./img/credbevy.png";
 import eye from "./img/eye.png";
 import eyeSlash from "./img/eyeSlash.png";
 import { useNavigate } from "react-router-dom";
@@ -44,12 +45,11 @@ export default function Login() {
 
   return (
     <div className="">
-      <div className="relative container mx-auto p-6 mt-6">
-        <img
-          src={credbevyLogo}
-          alt="credbevy logo"
-          className="w-[184px] h-[34px]"
-        />
+      <div className="flex items-end mx-auto p-6 mt-6">
+        <div className="flex items-center justify-center">
+          <img src={bevy} alt="B" className="h-[65px]" />
+          <img src={credbevy} alt="credbevy" className="h-[24px] ml-[-9px]" />
+        </div>
       </div>
 
       <form

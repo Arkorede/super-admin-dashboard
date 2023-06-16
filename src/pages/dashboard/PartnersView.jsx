@@ -1,6 +1,6 @@
 import React from "react";
 
-import credbevyB from "./img/credbevyB.png";
+import bevy from "./../login/img/bevy.png";
 import PartnerWallet from "./PartnerWallet";
 import PartnerDetails from "./PartnerDetails";
 import CompanyProfile from "./CompanyProfile";
@@ -17,7 +17,7 @@ function PartnersView() {
     <div className="mt-[44px]">
       <div className="flex flex-end">
         <div className="flex items-center justify-center pl-[2px]">
-          <img src={credbevyB} alt="B" className="w-[62px] h-[65px]" />
+          <img src={bevy} alt="B" className="w-[62px] h-[65px]" />
           <p className="font-bold text-[2.125rem] leading-9">
             CredBevy Finance Limited
           </p>
