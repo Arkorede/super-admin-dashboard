@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import bevy from "../../pages/login/img/bevy.png";
-import credbevy from "../../pages/login/img/credbevy.png";
+import credBevy from "../../pages/login/img/credBevy.png";
 import category from "./img/category.png";
 import emptyWallet from "./img/emptyWallet.png";
 import chart from "./img/chart.png";
@@ -24,7 +24,7 @@ function Sidebar() {
       <div className="py-7">
         <div className="flex items-center justify-center">
           <img src={bevy} alt="B" className="h-[65px]" />
-          <img src={credbevy} alt="credbevy" className="h-[24px] ml-[-9px]" />
+          <img src={credBevy} alt="credbevy" className="h-[24px] ml-[-9px]" />
         </div>
       </div>
 
