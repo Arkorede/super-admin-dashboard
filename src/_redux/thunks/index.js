@@ -80,7 +80,7 @@ export const listRoles = () => {
     try {
       const response = await axios.get('http://credbevy-env.eba-nsfp43cc.us-east-1.elasticbeanstalk.com/api/partner/roles', {
         headers: {
-          'Authorization': "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJodHRwOi8vY3JlZGJldnktZW52LmViYS1uc2ZwNDNjYy51cy1lYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb20vYXBpL3BhcnRuZXIvbG9naW4iLCJpYXQiOjE2ODI5NzY1MTQsImV4cCI6MTY4MzA2MjkxNCwibmJmIjoxNjgyOTc2NTE0LCJqdGkiOiJKQUxFd2JPTU9SdmpDVUdGIiwic3ViIjoiMSIsInBydiI6IjY1ZmJlNzAyM2JmY2FiODE2Njc5ODVlZWE4MzA4OTZjYzQ4MWNlYjYifQ.fB8DsdpXZCqtHtljgSjVcc9g2ypy4OE50HxsA4WkBSVm8-UoWIrAQKmwGtluD0lURkmwGxanTLmj-EPsKoYsNCsMB7oJBnADlKKFjkptblEtMPObwH7afSEW1hiRnh7VMwryagviGORh_Fnm41uw-TImW1kU2sQEAwnsiNi_4SmKq7Mng1EeTcFk_QR0MT1VmMwn44sJw6oQKQPDkUrF-YYYSP14a5BVV-7U8O7iWsqp1NsBXhhEHawWSNdwAqNCOVLAOZBsLQbALCQnjabt5aD62IBZe_5inB-U7pMEqg8XosBlthGSyX2rZsrK7GEcl07lg-wRDijeAiB7Bevm7BuI_nR3rm7vORzVUQBAgpNGrBuAura-2GKvw74WXCPSHZx0vnB_s9453RIq1Ip-NhxsBx6I1VeignO6gismEEeU3wFXVgD2Vw8kfdSn0uD3VF1NIs30XjRJjQn_3dAZ4EecrpM4bhKgCu2swWWz7M_uHf4RtIbWY4BgA1jCSbDuzk2NozwEtuzt4DBCJR7Cb8UmkJHsLu3IUxGfqJnox94MVmwyy6nRu_TAL_MpPYyStOTqCe8D6eDU92oJ6MVaWyVJwBv8rPB6_wDiMuEL1eMZBJ0pSZWHBcEr2SVLu2ug7lCU8EBK7zt6fRjLjvWwi2ZlD1wVRzqDic2POdKUanw",
+          'Authorization': "",
           'Content-Type': 'application/json'
         },
       });
