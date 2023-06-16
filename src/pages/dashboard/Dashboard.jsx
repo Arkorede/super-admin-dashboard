@@ -36,7 +36,7 @@ function Dashboard() {
               onClick={clicked}
             >
               <img src={add} alt="add icon" className="w-4 h-4" />
-              <p className="font-bold text-[0.625rem]">FundWallet</p>
+              <p className="font-bold text-[0.625rem]">Fund Wallet</p>
             </button>
             {modalOn && (
               <FundModal setModalOn={setModalOn} setChoice={setChoice} />
