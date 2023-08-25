@@ -111,13 +111,13 @@ export default function PartnerModal({ setPartnerModalOn }) {
 
                 <div>{handleForm()}</div>
 
-                {page === 2 ? (
+                {/* {page === 2 ? (
                   <button className="ml-[505px] mt-[20px] text-white text-xs font-bold leading-4 p-2.5 bg-darkPurple rounded">
                     Add Team Member
                   </button>
-                ) : null}
+                ) : null} */}
 
-                {page === 2 ? (
+                {/* {page === 2 ? (
                   <div className="flex items-center justify-center gap-2 mt-[19px]">
                     <img
                       src={tickCircle}
@@ -133,7 +133,7 @@ export default function PartnerModal({ setPartnerModalOn }) {
                       dashboard as an <span className="font-bold">ADMIN</span>
                     </p>
                   </div>
-                ) : null}
+                ) : null} */}
               </div>
             </div>
           </div>

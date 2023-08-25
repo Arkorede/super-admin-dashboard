@@ -4,8 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { createPartner2 } from "../../../_redux/thunks";
 import tickCircle from "../img/tickCircle.png";
 import document from "../img/document.png";
+import axios from "axios";
+import api from "./../../../axios/api";
 
 const PartnerForm2 = (props) => {
+  const { handleNext, handleCancelClick } = props;
   const dispatch = useDispatch();
 
   const { partner2 } = useSelector((state) => state.partner2Reducer);
@@ -14,8 +17,8 @@ const PartnerForm2 = (props) => {
   const [doc2Name, setDoc2Name] = useState("");
 
   const [partner_RC_Number, setPartner_RC_Number] = useState("");
-  const [cac_uploads, setCac_Uploads] = useState([{}]);
-  const [license_uploads, setLicense_Uploads] = useState([{}]);
+  const [cac_upload, setCac_Upload] = useState("");
+  const [license_upload, setLicense_Upload] = useState("");
 
   useEffect(() => {
     if (partner2) {
@@ -28,63 +31,51 @@ const PartnerForm2 = (props) => {
   };
 
   const handleFile1Change = (e) => {
-    // const inputDocs = e.target.files;
-    // console.log(inputDocs);
-    // // setDoc1Name(inputDoc.name);
+    const inputDoc = e.target.files[0];
+    setDoc1Name(inputDoc.name);
 
-    // // let fillArr = new Array(1).fill(inputDoc.name);
-    // setCac_Uploads(Array.from(inputDocs));
     const filesArray = [];
 
     for (let i = 0; i < e.target.files.length; i++) {
-      filesArray.push(URL.createObjectURL(e.target.files[i]));
+      filesArray.push(e.target.files[i]);
     }
 
-    setCac_Uploads(filesArray);
-    console.log(filesArray);
+    setCac_Upload(filesArray);
   };
 
-  // const handleFile1Change = (e) => {
-  //   const filesArray = Array.from(e.target.files);
-  //   setFile(filesArray);
-  // };
-
   const handleFile2Change = (e) => {
-    // const inputDoc = e.target.files[0];
-    // console.log(inputDoc);
-    // setDoc2Name(inputDoc.name);
-    // setLicense_Uploads([e.target.files[0]]);
+    const inputDoc = e.target.files[0];
+    setDoc2Name(inputDoc.name);
 
-    // const inputDocs = e.target.files;
-    // console.log(inputDocs);
-
-    // setLicense_Uploads(Array.from(inputDocs));
     const filesArray = [];
 
     for (let i = 0; i < e.target.files.length; i++) {
-      filesArray.push(URL.createObjectURL(e.target.files[i]));
+      filesArray.push(e.target.files[i]);
     }
 
-    setLicense_Uploads(filesArray);
-    console.log(filesArray);
+    setLicense_Upload(filesArray);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPartner2(partner_RC_Number, cac_uploads, license_uploads));
-    // console.log(license_uploads);
-    console.log(cac_uploads);
+
+    const formData = new FormData();
+
+    formData.append("partner_RC_Number", partner_RC_Number);
+
+    for (let i = 0; i < cac_upload.length; i++) {
+      formData.append("cac_upload[]", cac_upload[i]);
+    }
+
+    for (let i = 0; i < license_upload.length; i++) {
+      formData.append("license_upload[]", license_upload[i]);
+    }
+
+    dispatch(createPartner2(formData));
   };
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   const data = new FormData();
-  //   file.forEach(fil) => {
-  //     data.append('cac_uploads[]', cac_upload)
-  //   }
-  // }
   return (
-    <div className="p">
+    <div className="">
       <div className="grid grid-cols-3 pl-8 pr-[60px] mt-[36px]">
         <div className="col-span-1 flex flex-col gap-10">
           <div className="flex gap-4">
@@ -168,7 +159,7 @@ const PartnerForm2 = (props) => {
                       value={partner_RC_Number}
                       onChange={handleNumberChange}
                       className="[&::-webkit-inner-spin-button]:appearance-none block w-[375px] font-normal rounded border border-solid border-[#DCDCE4] px-2.5 py-1.5 text-sm sm:leading-6 outline-none"
-                      required
+                      // required
                     />
                   </div>
                 </div>
@@ -190,7 +181,7 @@ const PartnerForm2 = (props) => {
                         <span>browse</span>
                         <input
                           id="cac_uploads"
-                          name="file-upload"
+                          name="cac-upload"
                           type="file"
                           className="hidden"
                           onChange={handleFile1Change}
@@ -221,7 +212,7 @@ const PartnerForm2 = (props) => {
                         <span>browse</span>
                         <input
                           id="license_uploads"
-                          name="file-upload"
+                          name="license-upload"
                           type="file"
                           className="hidden"
                           onChange={handleFile2Change}
@@ -237,7 +228,6 @@ const PartnerForm2 = (props) => {
             <button
               className="absolute top-[577px] right-[28px] p-[5px] rounded text-xs font-bold bg-darkPurple text-white"
               type="submit"
-              onClick={props.handleNext}
             >
               Proceed
             </button>
@@ -264,7 +254,7 @@ const PartnerForm2 = (props) => {
       <div className="flex h-[40px] bg-[#F6F6F6] p-5 justify-between mt-[33px] justify-center items-center">
         <button
           className="p-[5px] rounded text-xs font-bold border-[0.5px] border-solid border-[#DCDCE4] bg-white"
-          onClick={props.handleCancelClick}
+          onClick={handleCancelClick}
         >
           Cancel
         </button>

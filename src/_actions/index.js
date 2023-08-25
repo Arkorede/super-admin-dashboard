@@ -16,6 +16,10 @@ export const CREATE_PARTNER_START2 = 'CREATE_PARTNER_START2'
 export const CREATE_PARTNER_SUCCESS2 = 'CREATE_PARTNER_SUCCESS2'
 export const CREATE_PARTNER_FAILURE2 = 'CREATE_PARTNER_FAILURE2'
 
+export const CREATE_PARTNER_START3 = 'CREATE_PARTNER_START3'
+export const CREATE_PARTNER_SUCCESS3 = 'CREATE_PARTNER_SUCCESS3'
+export const CREATE_PARTNER_FAILURE3 = 'CREATE_PARTNER_FAILURE3'
+
 export const LIST_ROLES_START = 'LIST_ROLES_START'
 export const LIST_ROLES_SUCCESS = 'LIST_ROLES_SUCCESS'
 export const LIST_ROLES_FAILURE = 'LIST_ROLES_FAILURE'
@@ -84,5 +88,18 @@ export const createPartnerSuccess2 = (partner) => {
 
 export const createPartnerFailure2 = (error) => {
   return { type: CREATE_PARTNER_FAILURE2, payload: error }
+}
+
+// INVITE A TEAM MEMBER
+export const createPartnerStart3 = () => {
+  return { type: CREATE_PARTNER_START3 }
+}
+
+export const createPartnerSuccess3 = (partner) => {
+  return { type: CREATE_PARTNER_SUCCESS3, payload: partner }
+}
+
+export const createPartnerFailure3 = (error) => {
+  return { type: CREATE_PARTNER_FAILURE3, payload: error }
 }
 

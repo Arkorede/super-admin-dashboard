@@ -2,6 +2,7 @@ import React from "react";
 import tickCircle from "../img/tickCircle.png";
 
 const PartnerForm4 = (props) => {
+  const { handleNext, handleCancelClick } = props;
   return (
     <div className="">
       <div className="grid grid-cols-2 pl-8 mt-[50px] h-full">
@@ -104,14 +105,14 @@ const PartnerForm4 = (props) => {
       <div className="absolute w-full flex h-[40px] bg-[#F6F6F6] p-5 justify-between bottom-0 justify-center items-center">
         <button
           className="p-[5px] rounded text-xs font-bold border-[0.5px] border-solid border-[#DCDCE4] bg-white"
-          onClick={props.handleCancelClick}
+          onClick={handleCancelClick}
         >
           Cancel
         </button>
         <button
           className="p-[5px] rounded text-xs font-bold bg-darkPurple text-white"
           type="submit"
-          onClick={props.handleCancelClick}
+          onClick={handleCancelClick}
         >
           Done
         </button>

@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import tickCircle from "../img/tickCircle.png";
 import { useDispatch, useSelector } from "react-redux";
 import { createPartner1 } from "../../../_redux/thunks";
+import api from "./../../../axios/api";
 
 const PartnerForm1 = (props) => {
+  const { handleNext, handleCancelClick } = props;
+
   const [state, setState] = useState({
     partner_name: "",
     partner_display_name: "",
@@ -31,15 +34,9 @@ const PartnerForm1 = (props) => {
 
   useEffect(() => {
     if (partner1) {
-      setChoice(true);
-      setModalOn(false);
+      handleNext();
     }
   }, [partner1]);
-
-  // const handleProceedClick = () => {
-  //   setChoice(true);
-  //   setModalOn(false);
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,7 +79,7 @@ const PartnerForm1 = (props) => {
   };
 
   return (
-    <div className="p">
+    <div className="">
       <div className="grid grid-cols-3 pl-8 pr-[60px] mt-[50px]">
         <div className="col-span-1 flex flex-col gap-10">
           <div className="flex gap-4">
@@ -271,7 +268,6 @@ const PartnerForm1 = (props) => {
             <button
               className="absolute top-[574px] right-[28px] p-[5px] rounded text-xs font-bold bg-darkPurple text-white"
               type="submit"
-              onClick={props.handleNext}
             >
               Proceed
             </button>
@@ -281,7 +277,7 @@ const PartnerForm1 = (props) => {
       <div className="flex h-[40px] bg-[#F6F6F6] p-6 justify-between mt-[79px] justify-center items-center">
         <button
           className="p-[5px] rounded text-xs font-bold border-[0.5px] border-solid border-[#DCDCE4] bg-white"
-          onClick={props.handleCancelClick}
+          onClick={handleCancelClick}
         >
           Cancel
         </button>

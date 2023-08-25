@@ -21,22 +21,22 @@ function App() {
     // <Router>
     <Routes>
       <Route exact path="/" element={<Login />} />
-      {/* <Route element={<PrivateRoutes />}> */}
-      <Route path="/" element={<Layout />}>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="wallet" element={<Wallet />} />
-        <Route path="partners/partner" element={<Partner />} />
-        <Route path="partners" element={<Partners />} />
-        <Route path="partners/:id" element={<PartnersView />} />
-        <Route path="loanrequest" element={<LoanRequest />} />
-        <Route path="users" element={<Users />} />
-        <Route path="users/user" element={<User />} />
-        <Route path="loanhistory" element={<LoanHistory />} />
-        <Route path="documents" element={<Documents />} />
-        <Route path="transactions" element={<Transactions />} />
-        <Route path="settings" element={<Settings />} />
+      <Route element={<PrivateRoutes />}>
+        <Route path="/" element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="wallet" element={<Wallet />} />
+          <Route path="partners/partner" element={<Partner />} />
+          <Route path="partners" element={<Partners />} />
+          <Route path="partners/:id" element={<PartnersView />} />
+          <Route path="loanrequest" element={<LoanRequest />} />
+          <Route path="users" element={<Users />} />
+          <Route path="users/user" element={<User />} />
+          <Route path="loanhistory" element={<LoanHistory />} />
+          <Route path="documents" element={<Documents />} />
+          <Route path="transactions" element={<Transactions />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
       </Route>
-      {/* </Route> */}
     </Routes>
     // </Router>
   );

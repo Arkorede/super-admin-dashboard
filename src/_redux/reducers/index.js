@@ -1,4 +1,4 @@
-import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGOUT_FAILURE, CREATE_USER_START, CREATE_USER_SUCCESS, CREATE_USER_FAILURE, CREATE_PARTNER_START1, CREATE_PARTNER_SUCCESS1, CREATE_PARTNER_FAILURE1, CREATE_PARTNER_START2, CREATE_PARTNER_SUCCESS2, CREATE_PARTNER_FAILURE2, LIST_ROLES_START, LIST_ROLES_SUCCESS, LIST_ROLES_FAILURE } from "../../_actions";
+import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGOUT_FAILURE, CREATE_USER_START, CREATE_USER_SUCCESS, CREATE_USER_FAILURE, CREATE_PARTNER_START1, CREATE_PARTNER_SUCCESS1, CREATE_PARTNER_FAILURE1, CREATE_PARTNER_START2, CREATE_PARTNER_SUCCESS2, CREATE_PARTNER_FAILURE2, CREATE_PARTNER_START3, CREATE_PARTNER_SUCCESS3, CREATE_PARTNER_FAILURE3, LIST_ROLES_START, LIST_ROLES_SUCCESS, LIST_ROLES_FAILURE } from "../../_actions";
 
 const initialState = {
   partnerUser: null,
@@ -6,7 +6,8 @@ const initialState = {
   error: null,
   roles: null,
   partner1: null,
-  partner2: null
+  partner2: null,
+  partner3: null
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -30,6 +31,7 @@ export const authReducer = (state = initialState, action) => {
   }
 };
 
+// GENERAL INFORMATION
 export const partner1Reducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_PARTNER_START1:
@@ -45,6 +47,8 @@ export const partner1Reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+// COMPANY INFORMATION
 export const partner2Reducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_PARTNER_START2:
@@ -53,6 +57,20 @@ export const partner2Reducer = (state = initialState, action) => {
       return { ...state, partner2: action.payload, error: null };
     case CREATE_PARTNER_FAILURE2:
       return { ...state, partner2: null, error: action.payload }
+    default:
+      return state;
+  }
+};
+
+// INVITE A TEAM MEMBER
+export const partner3Reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case CREATE_PARTNER_START3:
+      return { ...state };
+    case CREATE_PARTNER_SUCCESS3:
+      return { ...state, partner3: action.payload, error: null };
+    case CREATE_PARTNER_FAILURE2:
+      return { ...state, partner3: null, error: action.payload }
     default:
       return state;
   }

@@ -109,7 +109,7 @@ export default function Login() {
         </div>
         <div className="flex justify-center items-center mt-10">
           <button
-            className="flex justify-center items-center text-white bg-darkPurple w-[327px] h-[58px] px-[160px] py-[21px]"
+            className="flex justify-center items-center text-white bg-darkPurple w-[327px] h-[58px] px-[160px] py-[21px] rounded"
             type="submit"
           >
             Login

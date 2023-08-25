@@ -1,4 +1,4 @@
-import { loginSuccess, loginFailure, logoutSuccess, logoutFailure, listRolesSuccess, listRolesFailure, createPartnerSuccess1, createPartnerFailure1, createPartnerSuccess2, createPartnerFailure2 } from "../../_actions";
+import { loginSuccess, loginFailure, logoutSuccess, logoutFailure, listRolesSuccess, listRolesFailure, createPartnerSuccess1, createPartnerFailure1, createPartnerSuccess2, createPartnerFailure2, createPartnerSuccess3, createPartnerFailure3 } from "../../_actions";
 import axios from 'axios';
 import api from '../../axios/api';
 
@@ -108,6 +108,7 @@ export const createPartner1 = (partner_name, partner_display_name, partner_addre
       );
 
       const data = response.data;
+      localStorage.setItem("partner_id", data.partner.partner_id)
       console.log('Partner created');
 
       dispatch(createPartnerSuccess1(data.partner));
@@ -121,30 +122,19 @@ export const createPartner1 = (partner_name, partner_display_name, partner_addre
   };
 };
 
-// cac_uploads.forEach((cac_upload) => {
-//   formData.append('cac_uploads[]', cac_upload);
-// })
-// license_uploads.forEach((license_upload) => {
-//   formData.append('license_uploads[]', license_upload);
-// })
-export const createPartner2 = (partner_RC_Number, cac_uploads, license_uploads) => {
-  return async (dispatch) => {
-    const formData = new FormData();
+export const createPartner2 = (formData) => {
+  const partnerID = localStorage.getItem("partner_id");
+  console.log(partnerID);
 
-    formData.append('partner_RC_Number', partner_RC_Number);
-    for (let i = 0; i < cac_uploads.length; i++) {
-      formData.append('cac_uploads[]', cac_uploads[i]);
-    }
-    for (let i = 0; i < license_uploads.length; i++) {
-      formData.append('license_uploads[]', license_uploads[i]);
-    }
+  return async (dispatch) => {
     try {
-      const response = await api.post('/api/admin/partner/business-information/94dcb314-08cf-4003-a6a6-17142cf0a4ae', formData);
+      const endpoint = `/api/admin/partner/business-information/${partnerID}`
+      const response = await api.post(endpoint, formData);
 
       const data = response.data;
       console.log('documents upload');
 
-      dispatch(createPartnerSuccess2(data.status));
+      dispatch(createPartnerSuccess2(data));
 
       console.log(response);
       console.log(data);
@@ -154,4 +144,23 @@ export const createPartner2 = (partner_RC_Number, cac_uploads, license_uploads) 
     }
   };
 };
+
+export const createPartner3 = (email, password, confirmPassword) => {
+  const partnerID = localStorage.getItem("partner_id");
+
+  return async (dispatch) => {
+    try {
+      const endpoint = `/api/admin/partner/admin/invite/${partnerID}`
+      const response = await api.post(endpoint, email, password, confirmPassword);
+
+      const data = response.data;
+      dispatch(createPartnerSuccess3(data))
+
+      console.log(data);
+    } catch (error) {
+      dispatch(createPartnerFailure3(error.message))
+      console.log(error);
+    }
+  }
+}
 
